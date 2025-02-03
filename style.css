@@ -9,14 +9,8 @@ html {
 }
 
 body {
-  background-color: #f4e0e0;
-  font-family: 'Kissing Season', cursive;
-}
-
-.image {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
+  background-color: #fff0f6;
+  font-family: "Protest Riot", sans-serif;
 }
 
 .container {
@@ -47,7 +41,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
   gap: 1rem;
 }
 
