@@ -56,9 +56,6 @@ function generateMessage(noCount) {
 
 function changeImage(image) {
   catImg.src = `img/${image}.jpg`;  // Ensure the image name matches the files in your img folder
-  // Resize the image to less than 100 pixels in width, keeping the aspect ratio
-  catImg.style.width = "90px";  // Adjust this value as needed
-  catImg.style.height = "auto"; // This will maintain the aspect ratio
 }
 
 function updateNoButtonText() {
