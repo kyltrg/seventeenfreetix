@@ -54,6 +54,7 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
+  // Make sure the image filenames are correct, images are in the img folder
   catImg.src = `img/${image}.jpg`;
 }
 
