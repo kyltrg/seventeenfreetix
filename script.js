@@ -62,7 +62,9 @@ function generateMessage(noCount) {
 
 function changeImage(image) {
   // Change the image based on what's clicked
-  catImg.src = `img/${image}.jpg`;
+  const imagePath = `img/${image}.jpg`; // Use the .jpg extension
+  catImg.src = imagePath;
+  catImg.alt = `Image ${image}`; // Set alt text for accessibility
 }
 
 function updateNoButtonText() {
