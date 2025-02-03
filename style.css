@@ -23,8 +23,8 @@ body {
 }
 
 .cat-img {
-  width: 60%; 
-  height: auto;
+  width: 2360px;  /* Double the width (2x) */
+  height: auto;   /* Let the height adjust to maintain the aspect ratio */
   margin-bottom: 2rem;
 }
 
