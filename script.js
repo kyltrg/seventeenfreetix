@@ -1,13 +1,13 @@
 "use strict";
 
+// Get elements
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.querySelector(".btn--yes");
-const noButton = document.querySelector(".btn--no");
+const yesButton = document.querySelector("#yes");
+const noButton = document.querySelector("#no");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
-
 let play = true;
 let noCount = 0;
 
@@ -17,7 +17,7 @@ noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
-    changeImage("please_" + imageIndex); // Load the correct 'please_' image dynamically
+    changeImage(imageIndex);
     resizeYesButton();
     updateNoButtonText();
     if (noCount === MAX_IMAGES) {
@@ -29,14 +29,13 @@ noButton.addEventListener("click", function () {
 function handleYesClick() {
   titleElement.innerHTML = "YESSSSS!!! ILOVEYOUU LOVE LOVE :3";
   buttonsContainer.classList.add("hidden");
-  changeImage("YEYYY");  // Load 'YEYYY.jpg' when Yes is clicked
+  changeImage("YEYYY");
 }
 
 function resizeYesButton() {
   const computedStyle = window.getComputedStyle(yesButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
-
   yesButton.style.fontSize = `${newFontSize}px`;
 }
 
@@ -45,7 +44,7 @@ function generateMessage(noCount) {
     "No",
     "Can you please click Yes?",
     "Are you sure love?",
-    "Aww love naman, sure?? :((",
+    "Aww love naman, sure?? :(",
     "DON'T DO THIS TO MEEEE!!!!",
     "I'm gonna cry...",
   ];
@@ -55,10 +54,7 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  // Ensure the image names are correctly mapped to 'please_1.jpg', 'please_2.jpg', ... or 'YEYYY.jpg'
-  catImg.src = `img/${image}.jpg`;  
-  catImg.style.width = "90px";  // Resize image
-  catImg.style.height = "auto"; // Maintain aspect ratio
+  catImg.src = `img/${image}.jpg`;
 }
 
 function updateNoButtonText() {
