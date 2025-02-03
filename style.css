@@ -10,7 +10,7 @@ html {
 
 body {
   background-color: #fff0f6;
-  font-family: 'Kissing Season', cursive;
+  font-family: "Kissing Season", sans-serif;
 }
 
 .container {
@@ -23,9 +23,10 @@ body {
 }
 
 .cat-img {
-  width: 30rem; 
-  height: auto; 
+  width: 30rem;
+  height: 30rem;
   margin-bottom: 2rem;
+  transition: transform 0.3s ease-in-out;
   object-fit: contain;
 }
 
@@ -38,9 +39,6 @@ body {
 
 .buttons {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
 
@@ -65,21 +63,4 @@ body {
 
 .hidden {
   display: none;
-}
-
-.full-screen-btn {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 6rem;
-  width: 100vw;
-  height: 100vh;
-  background-color: #40c057;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
