@@ -8,7 +8,6 @@ const noButton = document.querySelector(".btn--no");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
-
 let play = true;
 let noCount = 0;
 let yesScale = 1; // Initial scale for the Yes button
@@ -32,7 +31,7 @@ function handleYesClick() {
   titleElement.innerHTML = "Yayyy!! :3";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
-  enlargeYesButton(); // Enlarge the Yes button
+  enlargeYesButton(); // Enlarge the Yes button when clicked
 }
 
 function resizeYesButton() {
@@ -46,8 +45,9 @@ function resizeYesButton() {
 function enlargeYesButton() {
   yesScale *= 1.5; // Increase the scale by 1.5 each time
 
-  if (yesScale >= 4) { 
-    yesButton.style.transform = `scale(4)`; // Enlarge the button to fill the screen
+  // Condition for enlarging the button to fill the entire screen
+  if (yesScale >= 4) {
+    yesButton.style.transform = `scale(4)`; // Scale button to fill the screen
     yesButton.style.width = "100vw"; // Full-screen width
     yesButton.style.height = "100vh"; // Full-screen height
     yesButton.style.fontSize = "5rem"; // Large text for visibility
@@ -55,10 +55,16 @@ function enlargeYesButton() {
     yesButton.style.alignItems = "center";
     yesButton.style.justifyContent = "center";
     yesButton.style.backgroundColor = "#40c057"; // Green background for the final screen
-    yesButton.innerHTML = "YES!!!";
+    yesButton.innerHTML = "YES!!!"; // Change text to YES!!!
   } else {
     yesButton.style.transform = `scale(${yesScale})`; // Gradually enlarge the Yes button
   }
+
+  // Ensure the image keeps its aspect ratio and enlarges without distortion
+  catImg.style.transform = `scale(2)`; // Scale the image to 2x
+  catImg.style.objectFit = "contain"; // Ensure the image stays proportional
+  catImg.style.maxWidth = "100%"; // Limit the width of the image to 100% of its container
+  catImg.style.maxHeight = "50vh"; // Limit the height to 50% of the viewport height
 }
 
 function generateMessage(noCount) {
@@ -76,6 +82,7 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
+  // Use different image paths based on the game state
   catImg.src = `img/${image}.jpg`;
 }
 
