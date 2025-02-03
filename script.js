@@ -1,58 +1,68 @@
-let yesButton = document.getElementById('yesButton');
-let noButton = document.getElementById('noButton');
-let currentScreen = 0; // Track the current screen
-let maxScreen = 5;     // Total number of screens before final "YES" button
+"use strict";
 
-yesButton.addEventListener('click', () => {
-  if (currentScreen < maxScreen) {
-    // Proceed to the next screen
-    currentScreen++;
-    loadScreen(currentScreen);
+const titleElement = document.querySelector(".title");
+const buttonsContainer = document.querySelector(".buttons");
+const yesButton = document.querySelector(".btn--yes");
+const noButton = document.querySelector(".btn--no");
+const catImg = document.querySelector(".cat-img");
+
+const MAX_IMAGES = 5;
+
+let play = true;
+let noCount = 0;
+
+yesButton.addEventListener("click", handleYesClick);
+
+noButton.addEventListener("click", function () {
+  if (play) {
+    noCount++;
+    const imageIndex = Math.min(noCount, MAX_IMAGES);
+    changeImage(imageIndex);
+    resizeYesButton();
+    updateNoButtonText();
+    if (noCount === MAX_IMAGES) {
+      play = false;
+    }
+  }
+});
+
+function handleYesClick() {
+  titleElement.innerHTML = "Yayyy!! :3";
+  buttonsContainer.classList.add("hidden");
+  changeImage("yes");
+}
+
+function resizeYesButton() {
+  const computedStyle = window.getComputedStyle(yesButton);
+  const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
+  const newFontSize = fontSize * 1.6;
+
+  yesButton.style.fontSize = `${newFontSize}px`;
+}
+
+function generateMessage(noCount) {
+  const messages = [
+    "No",
+    "Can you please click Yes?",
+    "Are you sure love?",
+    "Aww love naman, sure?? :((",
+    "DON'T DO THIS TO MEEEE!!!!",
+    "I'm gonna cry...",
+  ];
+
+  const messageIndex = Math.min(noCount, messages.length - 1);
+  return messages[messageIndex];
+}
+
+function changeImage(imageIndex) {
+  // Update the image based on the noCount value
+  if (imageIndex === "yes") {
+    catImg.src = `img/YEYYY.jpg`; // Final "yes" image
   } else {
-    // Show the fullscreen YES button on the last screen
-    showFullScreenYesButton();
-  }
-});
-
-noButton.addEventListener('click', () => {
-  if (currentScreen < maxScreen) {
-    // Proceed to the next screen with enlargement of the YES button
-    currentScreen++;
-    loadScreen(currentScreen);
-  }
-});
-
-// Function to load the next screen
-function loadScreen(screenNumber) {
-  // Update the images and text based on the screen number
-  document.getElementById('image').src = `img/please_${screenNumber + 1}.jpg`;
-  document.getElementById('text').textContent = "Loveee Leila, will u be my valentine?";
-  
-  // Enlarge the YES button for each screen
-  yesButton.classList.add('enlarged');
-  
-  // Change NO button text based on screen number
-  if (screenNumber === 1) {
-    noButton.textContent = "Are you sure love?";
-  } else if (screenNumber === 2) {
-    noButton.textContent = "Aww love naman, sure??";
-  } else if (screenNumber === 3) {
-    noButton.textContent = "DON'T DO THIS TO MEEEE!!!!";
-  } else if (screenNumber === 4) {
-    noButton.textContent = "PLEASEEE LOVE LEILAAA!!! HUHUHU";
+    catImg.src = `img/please_${imageIndex}.jpg`; // Other images
   }
 }
 
-// Show the fullscreen YES button
-function showFullScreenYesButton() {
-  yesButton.classList.add('fullscreen');
-  yesButton.textContent = "YES!!!";
-  // You can also play a sound here if you'd like
-  playSuccessMessage();
-}
-
-function playSuccessMessage() {
-  // Play the voice message when YES is clicked
-  let audio = new Audio('path/to/your/voice-message.mp3');
-  audio.play();
+function updateNoButtonText() {
+  noButton.innerHTML = generateMessage(noCount);
 }
