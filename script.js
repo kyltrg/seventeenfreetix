@@ -58,7 +58,7 @@ function changeImage(imageIndex) {
   if (imageIndex === "yes") {
     catImg.src = `img/YEYYY.jpg`; // Final "yes" image
   } else {
-    catImg.src = `img/please_${imageIndex}.jpg`; // Images for each "No"
+    catImg.src = `img/please_${imageIndex}.jpg`; // Custom images for each "No"
   }
 }
 
