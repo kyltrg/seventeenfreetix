@@ -54,20 +54,10 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  const imagePaths = {
-    YEYYY: 'img/YEYYY.jpg',
-    1: 'img/please_1.jpg',
-    2: 'img/please_2.jpg',
-    3: 'img/please_3.jpg',
-    4: 'img/please_4.jpg',
-    5: 'img/please_5.jpg',
-  };
-
-  // Check if image is valid and change source accordingly
-  if (imagePaths[image]) {
-    catImg.src = imagePaths[image]; // Update the src of the image
+  if (image === "YEYYY") {
+    catImg.src = `img/YEYYY.jpg`;
   } else {
-    console.error('Image path not found');
+    catImg.src = `img/please_${image}.jpg`;
   }
 }
 
