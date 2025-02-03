@@ -1,55 +1,65 @@
-let yesBtn = document.getElementById('yes');
-let noBtn = document.getElementById('no');
-let message = document.getElementById('message');
+"use strict";
+
+let yesBtn = document.getElementById('yesButton');
+let noBtn = document.getElementById('noButton');
+let message = document.getElementById('text');
 let image = document.getElementById('image');
-let container = document.getElementById('container');
+let container = document.getElementById('screen');
 let currentStage = 1;
 let yesScale = 1;
 
-yesBtn.addEventListener('click', () => {
-  if (currentStage < 6) {
-    // Go to Yey Screen after Yes is clicked
-    if (currentStage === 1 || currentStage > 1) {
-      image.src = 'img/YEYYY.jpg'; // Image change for final screen
-      message.innerText = 'YEYYYYYY!!!';
-      yesBtn.style.display = 'none';  // Hide buttons
-      noBtn.style.display = 'none';
+const MAX_IMAGES = 5;
+
+let play = true;
+let noCount = 0;
+
+yesButton.addEventListener("click", handleYesClick);
+
+noButton.addEventListener("click", function () {
+  if (play) {
+    noCount++;
+    const imageIndex = Math.min(noCount, MAX_IMAGES);
+    changeImage(imageIndex);
+    resizeYesButton();
+    updateNoButtonText();
+    if (noCount === MAX_IMAGES) {
+      play = false;
     }
-  } else {
-    // If Yes clicked when the button covers the whole screen
-    message.innerText = "YES!!!";
-    yesBtn.style.fontSize = '50px';
-    yesBtn.style.width = '100%';
-    yesBtn.style.height = '100vh';
   }
 });
 
-noBtn.addEventListener('click', () => {
-  // Show next screen when No is clicked
-  if (currentStage < 5) {
-    currentStage++;
-    image.src = `img/please_${currentStage}.jpg`;
-    message.innerText = 'Loveee Leila, will u be my valentine?';
-    adjustYesButton();
-  } else if (currentStage === 5) {
-    currentStage++;
-    image.src = 'img/please_5.jpg';
-    message.innerText = 'Loveee Leila, will u be my valentine?';
-    adjustYesButton();
-  }
-});
+function handleYesClick() {
+  titleElement.innerHTML = "Yayyy!! :3";
+  buttonsContainer.classList.add("hidden");
+  changeImage("yes");
+}
 
-function adjustYesButton() {
-  yesScale += 1;  // Increase scale each time
-  yesBtn.style.transform = `scale(${1 + yesScale / 10})`;  // Enlarge the Yes button
-  yesBtn.style.fontSize = `${20 + yesScale * 5}px`;  // Increase font size of Yes
-  if (currentStage === 2) {
-    noBtn.innerText = 'Can you please click Yes?';
-  } else if (currentStage === 3) {
-    noBtn.innerText = 'Are you sure love?';
-  } else if (currentStage === 4) {
-    noBtn.innerText = 'Aww love naman, sure??';
-  } else if (currentStage === 5) {
-    noBtn.innerText = "DON'T DO THIS TO MEEEE!!!!";
-  }
+function resizeYesButton() {
+  const computedStyle = window.getComputedStyle(yesButton);
+  const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
+  const newFontSize = fontSize * 1.6;
+
+  yesButton.style.fontSize = `${newFontSize}px`;
+}
+
+function generateMessage(noCount) {
+  const messages = [
+    "No",
+    "Are you sure?",
+    "Pookie please",
+    "Don't do this to me :(",
+    "You're breaking my heart",
+    "I'm gonna cry...",
+  ];
+
+  const messageIndex = Math.min(noCount, messages.length - 1);
+  return messages[messageIndex];
+}
+
+function changeImage(image) {
+  catImg.src = `img/cat-${image}.jpg`;
+}
+
+function updateNoButtonText() {
+  noButton.innerHTML = generateMessage(noCount);
 }
