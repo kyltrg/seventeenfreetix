@@ -21,7 +21,6 @@ noButton.addEventListener("click", function () {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
     changeImage(imageIndex);
-    resizeYesButton();
     updateNoButtonText();
     if (noCount === MAX_IMAGES) {
       play = false;
@@ -33,13 +32,7 @@ function handleYesClick() {
   titleElement.innerHTML = "YESSSSS!!! ILOVEYOUU LOVE LOVE :3";
   buttonsContainer.classList.add("hidden");
   changeImage("YEYYY");
-  enlargeYesButton(); // Enlarge the Yes button 10x at the end
-}
-
-function resizeYesButton() {
-  // Resize the Yes button
-  const newFontSize = parseFloat(getComputedStyle(yesButton).fontSize) * 1.6;
-  yesButton.style.fontSize = `${newFontSize}px`;
+  enlargeYesButton(); // Enlarge only the Yes button at the end
 }
 
 function enlargeYesButton() {
