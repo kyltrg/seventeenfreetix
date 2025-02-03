@@ -54,18 +54,20 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
+  // Mapping image keys to their corresponding file names
   const validImages = {
     YEYYY: "YEYYY.jpg",
     1: "please_1.jpg",
     2: "please_2.jpg",
     3: "please_3.jpg",
     4: "please_4.jpg",
-    5: "please_5.jpg",
+    5: "please_5.jpg"
   };
 
+  // Check if the image exists in the validImages object and update the src attribute
   const imageName = validImages[image];
   if (imageName) {
-    catImg.src = `img/${imageName}`;
+    catImg.src = `img/${imageName}`; // Ensure the path is correct
   } else {
     console.error("Image not found!");
   }
