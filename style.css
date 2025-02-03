@@ -23,8 +23,8 @@ body {
 }
 
 .cat-img {
-  width: 30rem;
-  height: 30rem;
+  width: 60%; 
+  height: auto;
   margin-bottom: 2rem;
 }
 
