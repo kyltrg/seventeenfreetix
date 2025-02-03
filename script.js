@@ -54,8 +54,21 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  // Make sure the image filenames are correct, images are in the img folder
-  catImg.src = `img/${image}.jpg`;
+  const validImages = {
+    YEYYY: "YEYYY.jpg",
+    1: "please_1.jpg",
+    2: "please_2.jpg",
+    3: "please_3.jpg",
+    4: "please_4.jpg",
+    5: "please_5.jpg",
+  };
+
+  const imageName = validImages[image];
+  if (imageName) {
+    catImg.src = `img/${imageName}`;
+  } else {
+    console.error("Image not found!");
+  }
 }
 
 function updateNoButtonText() {
