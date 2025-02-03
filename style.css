@@ -23,10 +23,10 @@ body {
 }
 
 .cat-img {
-  width: 80%;  /* Adjust image width to 80% of its original size */
-  max-width: 1180px; /* Maximum width to maintain default aspect ratio */
+  width: 60%; /* Adjusting to 60% of its original size */
+  max-width: 708px; /* Adjust this based on your needs */
   height: auto;
-  transition: transform 0.3s ease-in-out;  /* Smooth transition for enlarging the image */
+  transition: transform 0.3s ease-in-out;
 }
 
 .title {
