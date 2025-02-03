@@ -15,27 +15,31 @@ body {
 
 .container {
   height: 100vh;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 .cat-img {
-  width: 60%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
+  width: 59vw; /* Scales with viewport width */
+  height: auto; /* Maintains the aspect ratio */
+  margin-bottom: 2rem;
 }
 
 .title {
   font-size: 3.6rem;
   color: #f53699;
+  text-align: center;
   margin-bottom: 2rem;
 }
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -47,6 +51,7 @@ body {
   font-size: 1.6rem;
   font-weight: 600;
   cursor: pointer;
+  display: inline-block;
 }
 
 .btn--yes {
