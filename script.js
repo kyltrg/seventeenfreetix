@@ -47,14 +47,14 @@ function enlargeYesButton() {
   yesScale *= 1.2; // Increase the scale by 1.2 each time
   yesButton.style.transform = `scale(${yesScale})`;
 
-  if (yesScale >= 4) { // When it reaches scale 4, make the button full screen
+  if (yesScale >= 4) { 
     yesButton.style.width = "100vw";
     yesButton.style.height = "100vh";
-    yesButton.style.fontSize = "5rem"; // Make the font larger for full-screen button
+    yesButton.style.fontSize = "5rem"; 
     yesButton.style.display = "flex";
     yesButton.style.alignItems = "center";
     yesButton.style.justifyContent = "center";
-    yesButton.style.backgroundColor = "#40c057"; // Make it green for the final screen
+    yesButton.style.backgroundColor = "#40c057"; 
     yesButton.innerHTML = "YES!!!";
   }
 }
