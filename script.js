@@ -1,17 +1,21 @@
 "use strict";
 
+// Get the elements
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.querySelector(".btn--yes");
-const noButton = document.querySelector(".btn--no");
+const yesButton = document.getElementById("yes");
+const noButton = document.getElementById("no");
 const catImg = document.querySelector(".cat-img");
 
+// Set max images
 const MAX_IMAGES = 5;
-let play = true;
 let noCount = 0;
+let play = true;
 
+// Event listener for Yes button
 yesButton.addEventListener("click", handleYesClick);
 
+// Event listener for No button
 noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
@@ -29,14 +33,18 @@ function handleYesClick() {
   titleElement.innerHTML = "YESSSSS!!! ILOVEYOUU LOVE LOVE :3";
   buttonsContainer.classList.add("hidden");
   changeImage("YEYYY");
-  enlargeImage();
+  enlargeYesButton(); // Enlarge the Yes button 10x at the end
 }
 
 function resizeYesButton() {
-  const computedStyle = window.getComputedStyle(yesButton);
-  const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
-  const newFontSize = fontSize * 1.6;
+  // Resize the Yes button
+  const newFontSize = parseFloat(getComputedStyle(yesButton).fontSize) * 1.6;
   yesButton.style.fontSize = `${newFontSize}px`;
+}
+
+function enlargeYesButton() {
+  // Make the Yes button 10x bigger
+  yesButton.style.transform = "scale(10)";
 }
 
 function generateMessage(noCount) {
@@ -48,20 +56,16 @@ function generateMessage(noCount) {
     "DON'T DO THIS TO MEEEE!!!!",
     "I'm gonna cry...",
   ];
-
   const messageIndex = Math.min(noCount, messages.length - 1);
   return messages[messageIndex];
 }
 
 function changeImage(image) {
+  // Change the image based on what's clicked
   catImg.src = `img/${image}.jpg`;
 }
 
-function enlargeImage() {
-  const catImage = document.querySelector(".cat-img");
-  catImage.style.transform = "scale(1.3)"; /* Adjusted scale to make the image larger but not too big */
-}
-
 function updateNoButtonText() {
+  // Update the No button text
   noButton.innerHTML = generateMessage(noCount);
 }
