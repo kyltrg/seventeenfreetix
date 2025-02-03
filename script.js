@@ -22,8 +22,8 @@ yesBtn.addEventListener("click", function() {
     if (clickCount === 5) {
         image.src = images[5];
         text.innerHTML = texts[5];
-        yesBtn.style.width = "100vw";
-        yesBtn.style.height = "100vh";
+        yesBtn.style.width = "100vw";  // Expand button only horizontally
+        yesBtn.style.height = "100vh"; // Expand button only vertically
         noBtn.style.display = "none"; // Hide 'No' button when 'Yes' is clicked
         // Play voice message
         const audio = new Audio('your-audio-file.mp3');
