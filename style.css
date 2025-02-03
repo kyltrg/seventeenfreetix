@@ -1,66 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button Styles Debugging</title>
-  <style>
-    /* Basic Button Style */
-    button {
-      font-family: 'Arial', sans-serif;
-      font-size: 16px;
-      padding: 15px 30px;
-      border: none;
-      color: white;
-      cursor: pointer;
-      position: absolute;
-      bottom: 20px; /* Adjust this to position the button towards the bottom */
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all 0.3s ease;
-    }
+/* Basic Button Style */
+button {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  padding: 15px 30px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px; /* Adjust this to position the button towards the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
 
-    /* Green YES Button */
-    button.yes {
-      background-color: green;
-    }
+/* Green YES Button */
+button.yes {
+  background-color: green;
+}
 
-    /* Red NO Button */
-    button.no {
-      background-color: red;
-    }
+/* Red NO Button */
+button.no {
+  background-color: red;
+}
 
-    /* Style for the YES button when it enlarges */
-    button.enlarged {
-      font-size: 24px;  /* Increase font size */
-      width: 200px;  /* Increase button width */
-      height: 60px;  /* Increase button height */
-    }
+/* Style for the YES button when it enlarges */
+button.enlarged {
+  font-size: 24px;  /* Increase font size */
+  width: 200px;  /* Increase button width */
+  height: 60px;  /* Increase button height */
+}
 
-    /* Last Screen - Fullscreen YES button */
-    button.fullscreen {
-      width: 100vw;   /* Make the button cover full width */
-      height: 100vh;  /* Make the button cover full height */
-      font-size: 40px; /* Increase font size for better readability */
-      top: 0;         /* Position at the top of the screen */
-      left: 0;        /* Position at the left of the screen */
-      transform: none; /* Remove the transform to ensure it covers the full screen */
-    }
-  </style>
-</head>
-<body>
-  <button class="yes">YES</button>
-  <button class="no">NO</button>
-
-  <script>
-    // Example JavaScript to toggle classes for testing
-    document.querySelector('.yes').addEventListener('click', function() {
-      this.classList.toggle('enlarged');
-    });
-
-    document.querySelector('.no').addEventListener('click', function() {
-      this.classList.toggle('fullscreen');
-    });
-  </script>
-</body>
-</html>
+/* Last Screen - Fullscreen YES button */
+button.fullscreen {
+  width: 100vw;   /* Make the button cover full width */
+  height: 100vh;  /* Make the button cover full height */
+  font-size: 40px; /* Increase font size for better readability */
+  top: 0;         /* Position at the top of the screen */
+  left: 0;        /* Position at the left of the screen */
+  transform: none; /* Remove the transform to ensure it covers the full screen */
+}
