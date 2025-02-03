@@ -2,12 +2,11 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.getElementById("yes");
-const noButton = document.getElementById("no");
+const yesButton = document.querySelector(".btn--yes");
+const noButton = document.querySelector(".btn--no");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
-
 let play = true;
 let noCount = 0;
 
@@ -31,12 +30,12 @@ function handleYesClick() {
   buttonsContainer.classList.add("hidden");
   changeImage("YEYYY");
   enlargeImage();
+}
 
 function resizeYesButton() {
   const computedStyle = window.getComputedStyle(yesButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
-
   yesButton.style.fontSize = `${newFontSize}px`;
 }
 
@@ -55,11 +54,12 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  if (image === "YEYYY") {
-    catImg.src = `img/YEYYY.jpg`;
-  } else {
-    catImg.src = `img/please_${image}.jpg`;
-  }
+  catImg.src = `img/${image}.jpg`;
+}
+
+function enlargeImage() {
+  const catImage = document.querySelector(".cat-img");
+  catImage.style.transform = "scale(1.8)";
 }
 
 function updateNoButtonText() {
