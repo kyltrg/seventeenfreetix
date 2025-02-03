@@ -20,8 +20,8 @@ body {
 
 /* Image Styling */
 img {
-    width: 50%;  /* Keep the aspect ratio and size consistent */
-    max-width: 100%;  /* Prevent image from exceeding screen width */
+    width: 50%;
+    max-width: 100%;
     margin-bottom: 20px;
     transition: all 0.3s ease-in-out;
 }
@@ -50,4 +50,10 @@ img {
 
 .no {
     background-color: red;
+}
+
+/* Dynamic adjustments for the buttons */
+.adjust-no {
+    position: relative;
+    transition: all 0.3s ease-in-out;
 }
