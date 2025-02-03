@@ -3,25 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine's Day Question</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Be My Valentine</title>
   <link href="https://fonts.googleapis.com/css2?family=Kissing+Season&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="screen">
-    <!-- Image for the screen -->
-    <img id="image" src="img/please_1.jpg" alt="Image" style="width: 100%; max-width: 600px;"/>
-    
-    <!-- Text asking if they will be your Valentine -->
-    <h1 id="text" style="color: #D5006D; font-family: 'Kissing Season', sans-serif;">
-      Loveee Leila, will u be my valentine?
-    </h1>
-
-    <!-- Yes and No buttons -->
-    <button id="yesButton" class="yes">Yes</button>
-    <button id="noButton" class="no">No</button>
+  <div class="container" id="container">
+    <img src="img/please_1.jpg" id="image" class="image">
+    <h1 id="message">Loveee Leila, will u be my valentine?</h1>
+    <div class="buttons">
+      <button id="yes" class="btn green">Yes</button>
+      <button id="no" class="btn red">No</button>
+    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
