@@ -54,23 +54,9 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  // Mapping image keys to their corresponding file names
-  const validImages = {
-    YEYYY: "YEYYY.jpg",
-    1: "please_1.jpg",
-    2: "please_2.jpg",
-    3: "please_3.jpg",
-    4: "please_4.jpg",
-    5: "please_5.jpg"
-  };
-
-  // Check if the image exists in the validImages object and update the src attribute
-  const imageName = validImages[image];
-  if (imageName) {
-    catImg.src = `img/${imageName}`; // Ensure the path is correct
-  } else {
-    console.error("Image not found!");
-  }
+  const imagePath = `img/${image}.jpg`; // Ensure the image name matches exactly
+  catImg.src = imagePath;
+  catImg.alt = `Image ${image}`; // Alt text for accessibility
 }
 
 function updateNoButtonText() {
