@@ -54,7 +54,7 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  const imagePath = `img/${image}.jpg`; // Ensure the image name matches exactly
+  const imagePath = `img/${image}.jpg`; // Correct path
   catImg.src = imagePath;
   catImg.alt = `Image ${image}`; // Alt text for accessibility
 }
