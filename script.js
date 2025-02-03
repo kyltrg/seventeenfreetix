@@ -17,7 +17,7 @@ noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
-    changeImage(imageIndex);
+    changeImage("please_" + imageIndex); // Dynamic image change
     resizeYesButton();
     updateNoButtonText();
     if (noCount === MAX_IMAGES) {
@@ -29,7 +29,7 @@ noButton.addEventListener("click", function () {
 function handleYesClick() {
   titleElement.innerHTML = "YESSSSS!!! ILOVEYOUU LOVE LOVE :3";
   buttonsContainer.classList.add("hidden");
-  changeImage("YEYYY");
+  changeImage("YEYYY");  // Load the "YEYYY" image when Yes is clicked
 }
 
 function resizeYesButton() {
@@ -55,7 +55,10 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  catImg.src = `img/${image}.jpg`;  // Ensure the image name matches the files in your img folder
+  // Use the dynamic image naming for the "please_" images
+  catImg.src = `img/${image}.jpg`;  
+  catImg.style.width = "90px";  // Resize image
+  catImg.style.height = "auto"; // Maintain aspect ratio
 }
 
 function updateNoButtonText() {
