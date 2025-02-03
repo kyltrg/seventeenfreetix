@@ -44,18 +44,20 @@ function resizeYesButton() {
 }
 
 function enlargeYesButton() {
-  yesScale *= 1.2; // Increase the scale by 1.2 each time
-  yesButton.style.transform = `scale(${yesScale})`;
+  yesScale *= 1.5; // Increase the scale by 1.5 each time
 
   if (yesScale >= 4) { 
-    yesButton.style.width = "100vw";
-    yesButton.style.height = "100vh";
-    yesButton.style.fontSize = "5rem"; 
+    yesButton.style.transform = `scale(4)`; // Enlarge the button to fill the screen
+    yesButton.style.width = "100vw"; // Full-screen width
+    yesButton.style.height = "100vh"; // Full-screen height
+    yesButton.style.fontSize = "5rem"; // Large text for visibility
     yesButton.style.display = "flex";
     yesButton.style.alignItems = "center";
     yesButton.style.justifyContent = "center";
-    yesButton.style.backgroundColor = "#40c057"; 
+    yesButton.style.backgroundColor = "#40c057"; // Green background for the final screen
     yesButton.innerHTML = "YES!!!";
+  } else {
+    yesButton.style.transform = `scale(${yesScale})`; // Gradually enlarge the Yes button
   }
 }
 
