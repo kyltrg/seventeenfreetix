@@ -24,7 +24,7 @@ body {
 
 .cat-img {
   width: 59vw; /* Scales with viewport width */
-  height: auto; /* Maintains the aspect ratio */
+  height: auto; /* Maintains aspect ratio */
   margin-bottom: 2rem;
 }
 
