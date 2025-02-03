@@ -1,66 +1,41 @@
-body {
-  background-color: #f4e0e0;
-  font-family: 'Kissing Season', cursive;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  text-align: center;
-  position: relative;
-}
-
-.image {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-}
-
-h1 {
-  color: #ff69b4; /* Dark Pink */
-  font-size: 30px;
-  margin: 20px 0;
-}
-
-.button {
-  display: block;       /* Ensures the button takes up the full width */
-  margin: 8px;          /* Adds space around the button */
-  padding: 10px 20px;
+/* Basic Button Style */
+button {
+  font-family: 'Arial', sans-serif;
   font-size: 16px;
-  text-align: center;
-}
-
-button.green {
-  background-color: green;
-  color: white;
-}
-
-button.red {
-  background-color: red;
-  color: white;
-}
-
-.btn {
-  padding: 10px 20px;
-  font-size: 20px;
-  color: white;
+  padding: 15px 30px;
   border: none;
+  color: white;
   cursor: pointer;
+  position: absolute;
+  bottom: 20px; /* Adjust this to position the button towards the bottom */
+  left: 50%;
+  transform: translateX(-50%);
   transition: all 0.3s ease;
 }
 
-.green {
+/* Green YES Button */
+button.yes {
   background-color: green;
 }
 
-.red {
+/* Red NO Button */
+button.no {
   background-color: red;
 }
 
-.btn:active {
-  transform: scale(0.95);
+/* Style for the YES button when it enlarges */
+button.enlarged {
+  font-size: 24px;  /* Increase font size */
+  width: 200px;  /* Increase button width */
+  height: 60px;  /* Increase button height */
+}
+
+/* Last Screen - Fullscreen YES button */
+button.fullscreen {
+  width: 100vw;   /* Make the button cover full width */
+  height: 100vh;  /* Make the button cover full height */
+  font-size: 40px; /* Increase font size for better readability */
+  top: 0;         /* Position at the top of the screen */
+  left: 0;        /* Position at the left of the screen */
+  transform: none; /* Remove the transform to ensure it covers the full screen */
 }
