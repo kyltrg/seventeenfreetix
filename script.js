@@ -30,7 +30,7 @@ function handleYesClick() {
   titleElement.innerHTML = "YESSSSS!!! ILOVEYOUU LOVE LOVE :3";
   buttonsContainer.classList.add("hidden");
   changeImage("YEYYY");
-}
+  enlargeImage();
 
 function resizeYesButton() {
   const computedStyle = window.getComputedStyle(yesButton);
