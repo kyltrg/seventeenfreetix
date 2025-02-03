@@ -2,8 +2,8 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.querySelector(".btn--yes");
-const noButton = document.querySelector(".btn--no");
+const yesButton = document.getElementById("yes");
+const noButton = document.getElementById("no");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
@@ -42,10 +42,11 @@ function resizeYesButton() {
 
 function generateMessage(noCount) {
   const messages = [
-    "Can you please click Yes?",
-    "Are you sure love?",
-    "Aww love naman, sure?? :((",
-    "DON'T DO THIS TO MEEEE!!!!",
+    "No",
+    "Are you sure?",
+    "Pookie please",
+    "Don't do this to me :(",
+    "You're breaking my heart",
     "I'm gonna cry...",
   ];
 
@@ -54,11 +55,10 @@ function generateMessage(noCount) {
 }
 
 function changeImage(imageIndex) {
-  // Update the image based on the noCount value
   if (imageIndex === "yes") {
     catImg.src = `img/YEYYY.jpg`; // Final "yes" image
   } else {
-    catImg.src = `img/please_${imageIndex}.jpg`; // Other images
+    catImg.src = `img/please_${imageIndex}.jpg`; // Images for each "No"
   }
 }
 
