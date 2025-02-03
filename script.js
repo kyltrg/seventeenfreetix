@@ -59,7 +59,7 @@ function changeImage(image) {
 
 function enlargeImage() {
   const catImage = document.querySelector(".cat-img");
-  catImage.style.transform = "scale(1.8)";
+  catImage.style.transform = "scale(1.5)"; /* Adjusted scale for a better size */
 }
 
 function updateNoButtonText() {
