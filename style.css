@@ -9,14 +9,13 @@ html {
 }
 
 body {
-  background-color: #fff0f6;
+  background-color: #fff0f6; /* Light pink background */
   font-family: "Protest Riot", sans-serif;
 }
 
 .container {
   height: 100vh;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +30,7 @@ body {
 
 .title {
   font-size: 3.6rem;
-  color: #f53699;
+  color: #f53699; /* Dark pink color */
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -48,7 +47,6 @@ body {
   padding: 1.5rem 2.5rem;
   border: none;
   border-radius: 4px;
-
   color: white;
   font-size: 1.6rem;
   font-weight: 600;
@@ -57,11 +55,11 @@ body {
 }
 
 .btn--yes {
-  background-color: #40c057;
+  background-color: #40c057; /* Green background for Yes button */
 }
 
 .btn--no {
-  background-color: #f03e3e;
+  background-color: #f03e3e; /* Red background for No button */
 }
 
 .hidden {
