@@ -26,8 +26,6 @@ body {
   width: 30rem;
   height: 30rem;
   margin-bottom: 2rem;
-  transition: transform 0.3s ease-in-out;
-  object-fit: contain;
 }
 
 .title {
@@ -39,6 +37,9 @@ body {
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
