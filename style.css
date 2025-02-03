@@ -8,17 +8,20 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
+    overflow: hidden; /* Prevents content from overflowing */
 }
 
 /* Center the content */
 .content {
     position: relative;
     text-align: center;
+    display: inline-block;
 }
 
 /* Image Styling */
 img {
-    width: 50%;
+    width: 50%;  /* Keep the aspect ratio and size consistent */
+    max-width: 100%;  /* Prevent image from exceeding screen width */
     margin-bottom: 20px;
     transition: all 0.3s ease-in-out;
 }
